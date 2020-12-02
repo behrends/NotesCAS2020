@@ -1,11 +1,5 @@
-import React from 'react';
-import {
-  Button,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
 import NoteListItem from '../components/NoteListItem';
 
 const data = [
@@ -15,17 +9,25 @@ const data = [
 ];
 
 export default function Home({ navigation }) {
+  const [notes, setNotes] = useState(data);
+
+  function deleteNote(id) {
+    let newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.list}
-        data={data}
+        data={notes}
         renderItem={({ item }) => (
           <NoteListItem
             title={item.title}
             onPress={() =>
               navigation.navigate('Details', { id: item.id })
             }
+            onDelete={() => deleteNote(item.id)}
           />
         )}
       />

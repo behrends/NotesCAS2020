@@ -2,11 +2,11 @@ import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import * as Icon from '@expo/vector-icons';
 
-export default function NoteListItem({ title, onPress }) {
+export default function NoteListItem({ title, onPress, onDelete }) {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
-      <Pressable onPress={() => alert('TODO: Löschen')}>
+      <Pressable onPress={onDelete}>
         <Icon.MaterialCommunityIcons
           name="delete"
           size={20}
