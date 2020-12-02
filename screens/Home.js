@@ -18,6 +18,7 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <FlatList
+        style={styles.list}
         data={data}
         renderItem={({ item }) => (
           <NoteListItem
@@ -38,5 +39,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  list: {
+    width: '100%',
+    padding: 10,
   },
 });
