@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { Button, FlatList, StyleSheet, View } from 'react-native';
 import NoteListItem from '../components/NoteListItem';
 
 const data = [
@@ -30,6 +30,10 @@ export default function Home({ navigation }) {
             onDelete={() => deleteNote(item.id)}
           />
         )}
+      />
+      <Button
+        title="Neue Notiz"
+        onPress={() => navigation.navigate('Edit')}
       />
     </View>
   );
