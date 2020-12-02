@@ -6,6 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import NoteListItem from '../components/NoteListItem';
 
 const data = [
   { id: '1', title: 'Erste Notiz' },
@@ -18,7 +19,7 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={data}
-        renderItem={({ item }) => <Text>{item.title}</Text>}
+        renderItem={({ item }) => <NoteListItem title={item.title} />}
       />
     </View>
   );
