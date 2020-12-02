@@ -7,11 +7,11 @@ export default function Home({ navigation }) {
       <Text>Meine Notizen</Text>
       <Button
         title="Notiz 1"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Details', { id: 1 })}
       />
       <Button
         title="Notiz 2"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Details', { id: 2 })}
       />
     </View>
   );
