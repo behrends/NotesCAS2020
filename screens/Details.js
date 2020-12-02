@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function Details() {
   return (
     <View style={styles.container}>
       <Text>DETAILANSICHT</Text>
+      <Button
+        title="Bearbeiten"
+        onPress={() => alert('Gehe zu Edit Screen')}
+      />
     </View>
   );
 }
