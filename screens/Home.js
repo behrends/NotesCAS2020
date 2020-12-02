@@ -1,10 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>HOME</Text>
+      <Text>Meine Notizen</Text>
+      <Button
+        title="Notiz 1"
+        onPress={() => alert('Gehe zu Notiz 1')}
+      />
+      <Button
+        title="Notiz 2"
+        onPress={() => alert('Gehe zu Notiz 2')}
+      />
     </View>
   );
 }
