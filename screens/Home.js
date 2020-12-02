@@ -1,17 +1,24 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import {
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+
+const data = [
+  { id: '1', title: 'Erste Notiz' },
+  { id: '2', title: 'Andere Notiz' },
+  { id: '3', title: 'Noch eine Notiz' },
+];
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Meine Notizen</Text>
-      <Button
-        title="Notiz 1"
-        onPress={() => navigation.navigate('Details', { id: 1 })}
-      />
-      <Button
-        title="Notiz 2"
-        onPress={() => navigation.navigate('Details', { id: 2 })}
+      <FlatList
+        data={data}
+        renderItem={({ item }) => <Text>{item.title}</Text>}
       />
     </View>
   );
