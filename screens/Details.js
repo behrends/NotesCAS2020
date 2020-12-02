@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function Details() {
+export default function Details({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>DETAILANSICHT</Text>
       <Button
         title="Bearbeiten"
-        onPress={() => alert('Gehe zu Edit Screen')}
+        onPress={() => navigation.navigate('Edit')}
       />
     </View>
   );
